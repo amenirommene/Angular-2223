@@ -1,0 +1,7 @@
+Rechercher : <input [value]="categorie1" (keyup)="testValue(myVal.value)" #myVal > {{myVal.value}} <br>
+Rechercher (ngModel) : <input [(ngModel)] = "categorie2"> {{categorie2}}
+<ul>
+    <li *ngFor="let skander of list">
+        {{ skander.firstName}}
+    </li>
+</ul>
