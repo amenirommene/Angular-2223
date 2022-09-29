@@ -1,0 +1,24 @@
+<p>listuser works!</p>
+{{ nb }} 
+<img [src]="sourceImage" (click)="f()" />  
+
+<input [value]="nb" (keyup)="setNb(ref.value)" id="monNb" #ref>  {{ nb }} 
+<input [(ngModel)]="nb2"> {{nb2}}
+*******************************************
+<br>
+<table>
+    <tr>
+        <th>idCustomer</th>
+        <th>firstName</th>
+        <th>lastName</th>
+        <th></th>
+    </tr>
+    <tr *ngFor="let u of list; let i=index">
+        <td>{{i}} ** {{ u.idCustomer }}</td>
+        <td> {{ u.firstName }}</td>
+        <td>{{ u.lastName }} </td>
+        <td><button (click)="delete(i)">Delete</button></td>
+    </tr>
+</table>
+
+
