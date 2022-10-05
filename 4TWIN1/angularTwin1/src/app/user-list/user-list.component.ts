@@ -78,4 +78,9 @@ export class UserListComponent implements OnInit {
     console.log(this.categorie1);
   }
 
+  delete(i:number){
+    this.list.splice(i,1);
+
+  }
+
 }

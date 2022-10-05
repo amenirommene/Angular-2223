@@ -22,10 +22,10 @@ Rechercher (ngModel) : <input [(ngModel)] = "categorie2"> {{categorie2}}
 						</tr>
 					</thead>
 					<tbody>
-						<tr  *ngFor="let user of list">
+						<tr  *ngFor="let user of list; let i=index; let fi=first; ; let li=last">
 							<td>
 								<img src="{{user.picture}}" alt="">
-								<a href="#" class="user-link">{{user.firstName}} {{user.lastName}}</a>
+								<a href="#" class="user-link">{{li}}**{{fi}}**{{i}} ** {{user.firstName}} {{user.lastName}}</a>
 								<span class="user-subhead">{{user.accountCategory}}</span>
 							</td>
 							<td>
@@ -50,12 +50,12 @@ Rechercher (ngModel) : <input [(ngModel)] = "categorie2"> {{categorie2}}
 										<i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
 									</span>
 								</a>
-								<a href="#" class="table-link danger">
+								<button class="btn btn-link" [disabled]="user.accountCategory == 'Admin'">
 									<span class="fa-stack">
-										<i class="fa fa-square fa-stack-2x"></i>
-										<i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+										<i class="fa fa-square fa-stack-2x" style="color:red"></i>
+										<i class="fa fa-trash-o fa-stack-1x fa-inverse"  (click)="delete(i)"></i>
 									</span>
-								</a>
+								</button>
 							</td>
 						</tr>
 						

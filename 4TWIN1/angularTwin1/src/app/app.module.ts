@@ -11,10 +11,19 @@ import { UserListComponent } from './user-list/user-list.component';
 import { FooterComponent } from './footer/footer.component';
 import { ListAccountComponent } from './list-account/list-account.component';
 import { FormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
+import { UserComponent } from './user/user.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({ //méta data
   declarations: [ //liste des composants
-    AppComponent, TestComponent, Test2Component, NavbarComponent, SliderComponent, UserListComponent, FooterComponent, ListAccountComponent
+    AppComponent, TestComponent, 
+    Test2Component, NavbarComponent, SliderComponent, UserListComponent, FooterComponent,UserComponent, ListAccountComponent,
+     HomeComponent,
+     UserDetailsComponent,
+     NotFoundComponent
+  
   ],
   imports: [  //liste des modules
     BrowserModule,
