@@ -8,6 +8,7 @@ import { User } from '../models/user';
 })
 export class ListuserComponent implements OnInit {
 
+  categorie : string="test";
   sourceImage : string = '../assets/images/admin.png';
   nb2 : number = 8;
   nb : number = 5;

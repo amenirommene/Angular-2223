@@ -30,6 +30,7 @@ Rechercher (ngModel) : <input [(ngModel)] = "categorie2"> {{categorie2}}
     </li>
 </ul>--->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<input type="text" [(ngModel)]="categorie">
 <div class="container">
 <div class="row">
 	<div class="col-lg-12">
@@ -38,7 +39,8 @@ Rechercher (ngModel) : <input [(ngModel)] = "categorie2"> {{categorie2}}
 				<table class="table user-list">
 					<thead>
 						<tr>
-							<th><span>User</span></th>
+				
+						<th><span>User</span></th>
 							<th><span>Created</span></th>
 							<th class="text-center"><span>Status</span></th>
 							<th><span>Email</span></th>
@@ -46,10 +48,11 @@ Rechercher (ngModel) : <input [(ngModel)] = "categorie2"> {{categorie2}}
 						</tr>
 					</thead>
 					<tbody>
-						<tr  *ngFor="let user of list; let i=index">
+						<div  *ngFor="let user of list; let i=index">
+						<tr   *ngIf="user.accountCategory == categorie">
 							<td>
 								<img src="{{user.picture}}" alt="">
-								<a href="#" class="user-link">{{user.firstName}} {{user.lastName}}</a>
+								<a href="#" class="user-link">{{i}}**{{user.firstName}} {{user.lastName}}</a>
 								<span class="user-subhead">{{user.accountCategory}}</span>
 							</td>
 							<td>
@@ -74,15 +77,17 @@ Rechercher (ngModel) : <input [(ngModel)] = "categorie2"> {{categorie2}}
 										<i class="fa fa-pencil fa-stack-1x fa-inverse" ></i>
 									</span>
 								</a>
-								<a class="table-link danger" (click)="delete(i)">
+								<button class="table-link danger" (click)="delete(i)"
+								 [style.display]="user.accountCategory == 'Admin' ? 'none' : 'block'">
 									<span class="fa-stack">
 										<i class="fa fa-square fa-stack-2x"></i>
 										<i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
 									</span>
-								</a>
+								</button>
+								
 							</td>
 						</tr>
-						
+						</div>
 					</tbody>
 				</table>
 			</div>
