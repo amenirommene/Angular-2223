@@ -56,6 +56,9 @@ Rechercher (ngModel) : <input [(ngModel)] = "categorie2"> {{categorie2}}
 								<span class="user-subhead">{{user.accountCategory}}</span>
 							</td>
 							<td>
+								<a [routerLink]="['/user-details',user.idCustomer]">Details</a>
+							</td>
+							<td>
 								{{user.birthDate}}
 							</td>
 							<td class="text-center">

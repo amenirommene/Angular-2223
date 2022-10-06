@@ -11,6 +11,8 @@ import { ListuserComponent } from './listuser/listuser.component';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { UsersComponent } from './users/users.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { UsersComponent } from './users/users.component';
     FooterComponent,
     ListuserComponent,
     HomeComponent,
-    UsersComponent
+    UsersComponent,
+    UserDetailsComponent,
+    NotFoundComponent
   ],
   imports: [ //les modules que les composants ont besoin
     BrowserModule,
