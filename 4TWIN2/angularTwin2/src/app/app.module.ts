@@ -9,6 +9,8 @@ import { ContentComponent } from './content/content.component';
 import { FooterComponent } from './footer/footer.component';
 import { ListuserComponent } from './listuser/listuser.component';
 import { FormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
+import { UsersComponent } from './users/users.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { FormsModule } from '@angular/forms';
     SildeComponent,
     ContentComponent,
     FooterComponent,
-    ListuserComponent
+    ListuserComponent,
+    HomeComponent,
+    UsersComponent
   ],
   imports: [ //les modules que les composants ont besoin
     BrowserModule,
