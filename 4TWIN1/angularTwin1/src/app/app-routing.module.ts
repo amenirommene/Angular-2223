@@ -8,10 +8,14 @@ import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
   {path:"", redirectTo:"home", pathMatch:"full"},
+  {path: "user",
+    loadChildren: () => import('./user/user.module').then(m =>m.UserModule)
+  },
+
   {path:"home", component:HomeComponent},
-  {path:"user", component:UserComponent, children:[
+ /* {path:"user", component:UserComponent, children:[
     {path:"user-details/:id", component:UserDetailsComponent},
-  ]},
+  ]},*/
   {path: "**", component: NotFoundComponent}];
 
 @NgModule({

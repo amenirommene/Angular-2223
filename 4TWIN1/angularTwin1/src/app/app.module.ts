@@ -19,16 +19,15 @@ import { NotFoundComponent } from './not-found/not-found.component';
 @NgModule({ //méta data
   declarations: [ //liste des composants
     AppComponent, TestComponent, 
-    Test2Component, NavbarComponent, SliderComponent, UserListComponent, FooterComponent,UserComponent, ListAccountComponent,
+    Test2Component, NavbarComponent, FooterComponent,
      HomeComponent,
-     UserDetailsComponent,
      NotFoundComponent
   
   ],
   imports: [  //liste des modules
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],  //les services
   bootstrap: [AppComponent]  //quel composant lancer au démarrage de l'application (seulement au niveau du module racine)
