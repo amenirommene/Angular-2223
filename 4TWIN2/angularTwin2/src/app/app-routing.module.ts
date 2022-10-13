@@ -7,9 +7,13 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
-  {path:'user', component:UsersComponent},
+  {path:'', redirectTo:"home", pathMatch:"full"},
+  {
+    path: 'user',
+    loadChildren: () => import('./user/user.module').then(m => m.UserModule)
+  },
   {path:'home', component:HomeComponent},
-  {path:'user-details/:id', component:UserDetailsComponent},
+
   {path:'**', component: NotFoundComponent}
 ];
 

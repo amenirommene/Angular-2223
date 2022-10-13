@@ -13,18 +13,19 @@ import { HomeComponent } from './home/home.component';
 import { UsersComponent } from './users/users.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { UserModule } from './user/user.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    SildeComponent,
-    ContentComponent,
+   // SildeComponent,
+   // ContentComponent,
     FooterComponent,
-    ListuserComponent,
+    //ListuserComponent,
     HomeComponent,
-    UsersComponent,
-    UserDetailsComponent,
+   // UsersComponent,
+   // UserDetailsComponent,
     NotFoundComponent
   ],
   imports: [ //les modules que les composants ont besoin
