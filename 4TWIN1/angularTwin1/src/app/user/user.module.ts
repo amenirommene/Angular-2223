@@ -7,6 +7,9 @@ import { SliderComponent } from '../slider/slider.component';
 import { UserListComponent } from '../user-list/user-list.component';
 import { ListAccountComponent } from '../list-account/list-account.component';
 import { UserDetailsComponent } from '../user-details/user-details.component';
+import { UserFormComponent } from '../user-form/user-form.component';
+import { UserForm2Component } from './user-form2/user-form2.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,11 +18,14 @@ import { UserDetailsComponent } from '../user-details/user-details.component';
     UserListComponent,
     UserComponent, 
     ListAccountComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    UserFormComponent,
+    UserForm2Component
   ],
   imports: [
     CommonModule,
-    UserRoutingModule
+    UserRoutingModule,
+    FormsModule
   ]
 })
 export class UserModule { }

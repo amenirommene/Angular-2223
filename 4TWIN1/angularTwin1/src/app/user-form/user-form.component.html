@@ -1,0 +1,80 @@
+<form  #f="ngForm">
+    <table>
+        <tr>
+            <td>FirstName</td>
+            <td><input type="text" required  minlength="5" pattern="[a-zA-Z]*" name="firstname" [(ngModel)]="user.firstName" #first="ngModel">
+            <div *ngIf="first.invalid">
+                <div *ngIf="first.errors?.['required']"> <!--- !first.valid ---->
+                    FirstName obligatoire
+                </div>
+                <div *ngIf="first.errors?.['minlength']"> <!--- !first.valid ---->
+                    FirstName contient au minimum {{first.errors?.['minlength'].requiredLength}} caratctères alors que vous avez écrit
+                    {{first.errors?.['minlength'].actualLength}}
+                </div>
+                <div *ngIf="first.errors?.['pattern']"> <!--- !first.valid ---->
+                    FirstName ne doit contenir que des lettres 
+                </div>
+            </div>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>LastName</td>
+            <td><input type="text" required  minlength="5" pattern="[a-zA-Z]*" name="lastname" [(ngModel)]="user.lastName" #last="ngModel">
+                <div [hidden]="last.valid"> 
+                    LastName obligatoire
+                </div></td>
+        
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input type="email" pattern="^[a-zA-Z0-9._-]+@gmail.com" name="email" [(ngModel)]="user.email" #email="ngModel">
+                <div *ngIf="email.invalid">
+                    Email invalid
+                 </div>
+            </td>
+        
+        </tr>
+        <tr>
+            <td>Catégorie</td>
+            <td>
+                <select pattern="Customer" [(ngModel)]="accountCategory" #cat="ngModel" name="categorie">
+                    <option selected>Customer</option>
+                    <option>Gold</option>
+                </select>
+             <div *ngIf="cat.invalid">
+                Il faut choisir la catégorie Customer
+             </div>
+            
+            </td>
+        
+        </tr>
+        <tr>
+            <td>Mot de passe</td>
+            <td><input type="password" pattern="^[a-zA-Z0-9]{8,}?" [(ngModel)]="user.password" #pass="ngModel" name="pwd">
+                
+                <div *ngIf="pass.invalid">
+                   
+                   <p>Votre mot de passe doit contenir :</p>
+                    <ul>
+                    <li> des Caractères minuscules de a à z non accentués</li>
+                    <li> des Caractères majuscules de A à Z non accentués,</li>
+                    <li> des Chiffres de 0 à 9</li>
+                    <li> Au moins 8 caractères </li>   
+                </ul>  
+            
+                   
+
+
+                 </div>
+            </td>
+        </tr>
+        <tr>
+            <td><button [disabled]="f.invalid" (click)="test(first.errors?.['pattern'])">Ajouter</button></td>
+        </tr>
+    </table>
+</form>
+valid : {{ first.valid }} ** {{ first.invalid}} <br>
+touched : {{ first.touched }} ** {{ first.untouched }} <br>
+dirty : {{ first.dirty }} ** {{ first.pristine }} <br>
+errors: {{first.errors }}
