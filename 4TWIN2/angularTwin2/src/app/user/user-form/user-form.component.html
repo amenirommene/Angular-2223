@@ -1,9 +1,9 @@
 *************************************
-<form #f="ngForm">
+<form #f="ngForm" (ngSubmit)="addUser(f.value)">
     <div ngModelGroup="firstInfo" #sg="ngModelGroup">
     <div class="form-group">
       <label for="firstname">FirstName</label>
-      <input type="text" required  minlength="3" pattern="[a-zA-Z]*" name="firstname" ngModel #first="ngModel" class="form-control" id="firstname" placeholder="Enter FirstName">
+      <input type="text" required  minlength="3" pattern="[a-zA-Z]*" name="firstname" [(ngModel)]="user.firstName" #first="ngModel" class="form-control" id="firstname" placeholder="Enter FirstName">
     </div>
     <div *ngIf="first.invalid && first.touched">
     <div *ngIf="first.errors['required']" class="alert alert-danger" role="alert">
@@ -18,11 +18,11 @@
      </div>
      <div class="form-group">
         <label for="birthadte">birthadate</label>
-        <input type="text" required  minlength="3" pattern="[a-zA-Z]*" name="birthdate"  class="form-control" id="birthadte" placeholder="Enter LastName">
+        <input type="text" required  minlength="3" pattern="[a-zA-Z]*" name="birthdate" [(ngModel)]="user.birthDate"  class="form-control" id="birthadte" placeholder="Enter LastName">
       </div>
     <div class="form-group">
         <label for="lastname">LastName</label>
-        <input type="text" required  minlength="3" pattern="[a-zA-Z]*" name="lastname" ngModel #last="ngModel" class="form-control" id="lastname" placeholder="Enter LastName">
+        <input type="text" required  minlength="3" pattern="[a-zA-Z]*" name="lastname" [(ngModel)]="user.lastName" #last="ngModel" class="form-control" id="lastname" placeholder="Enter LastName">
       </div>
       <div *ngIf="last.invalid && last.touched">
         <div *ngIf="last.errors['required']" class="alert alert-danger" role="alert">
@@ -39,7 +39,7 @@
      <div *ngIf="sg.valid">
       <div class="form-group">
         <label for="exampleInputEmail1">Email address</label>
-        <input type="email" required pattern="^[a-zA-Z0-9._-]+@gmail.com" name="email" ngModel #email="ngModel" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+        <input type="email" required pattern="^[a-zA-Z0-9._-]+@gmail.com" name="email" [(ngModel)]="user.email" #email="ngModel" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
       </div>
       
@@ -53,6 +53,19 @@
      </div>
      </div>
      </div>
+     <div class="form-group">
+        <label for="lastname">Password</label>
+        <input type="text" name="password" [(ngModel)]="user.password" class="form-control" id="lastname" placeholder="Enter LastName">
+      </div>
+      <div class="form-group">
+        <label for="lastname">Profession</label>
+        <input type="text" name="profession" [(ngModel)]="user.profession" class="form-control" id="lastname" placeholder="Enter LastName">
+      </div>
+      <div class="form-group">
+        <label for="lastname">Customer Categorie</label>
+        <input type="text" name="cat" [(ngModel)]="user.accountCategory" class="form-control" id="lastname" placeholder="Enter LastName">
+      </div>
+
     <button type="submit" [disabled]="f.invalid" class="btn btn-primary">Submit</button>
   </form>
 <form>
