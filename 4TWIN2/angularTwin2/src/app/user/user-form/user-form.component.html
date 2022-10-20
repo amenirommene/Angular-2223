@@ -1,0 +1,92 @@
+*************************************
+<form #f="ngForm">
+    <div ngModelGroup="firstInfo" #sg="ngModelGroup">
+    <div class="form-group">
+      <label for="firstname">FirstName</label>
+      <input type="text" required  minlength="3" pattern="[a-zA-Z]*" name="firstname" ngModel #first="ngModel" class="form-control" id="firstname" placeholder="Enter FirstName">
+    </div>
+    <div *ngIf="first.invalid && first.touched">
+    <div *ngIf="first.errors['required']" class="alert alert-danger" role="alert">
+        FirstName Obligatoire !
+      </div>
+      <div *ngIf="first.errors?.['minlength']" class="alert alert-danger" role="alert">
+        il faut minimum {{ first.errors['minlength'].requiredLength}} caractères alors que vous avez écrits {{ first.errors['minlength'].actualLength}}
+     </div>
+     <div *ngIf="first.hasError('pattern')" class="alert alert-danger" role="alert">
+        tous des lettres
+     </div>
+     </div>
+     <div class="form-group">
+        <label for="birthadte">birthadate</label>
+        <input type="text" required  minlength="3" pattern="[a-zA-Z]*" name="birthdate"  class="form-control" id="birthadte" placeholder="Enter LastName">
+      </div>
+    <div class="form-group">
+        <label for="lastname">LastName</label>
+        <input type="text" required  minlength="3" pattern="[a-zA-Z]*" name="lastname" ngModel #last="ngModel" class="form-control" id="lastname" placeholder="Enter LastName">
+      </div>
+      <div *ngIf="last.invalid && last.touched">
+        <div *ngIf="last.errors['required']" class="alert alert-danger" role="alert">
+            LastName Obligatoire !
+          </div>
+          <div *ngIf="last.errors?.['minlength']" class="alert alert-danger" role="alert">
+            il faut minimum {{ last.errors['minlength'].requiredLength}} caractères alors que vous avez écrits {{ last.errors['minlength'].actualLength}}
+         </div>
+         <div *ngIf="last.hasError('pattern')" class="alert alert-danger" role="alert">
+            tous des lettres
+         </div>
+         </div>
+        </div>
+     <div *ngIf="sg.valid">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" required pattern="^[a-zA-Z0-9._-]+@gmail.com" name="email" ngModel #email="ngModel" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      
+      <div *ngIf="email.errors && email.touched">
+      <div *ngIf="email.errors?.['required']" class="alert alert-danger" role="alert">
+        Email obligatoire
+     </div>
+    
+     <div *ngIf="email.hasError('pattern')" class="alert alert-danger" role="alert">
+        Email "@gmail.com"
+     </div>
+     </div>
+     </div>
+    <button type="submit" [disabled]="f.invalid" class="btn btn-primary">Submit</button>
+  </form>
+<form>
+  
+<!-- FirstName : <input type="text" required minlength="3" pattern="[a-zA-Z]*" name="firstname" ngModel #first="ngModel">
+<div *ngIf="first.invalid && first.touched">
+    <div *ngIf="first.errors['required']">
+        FirstName obligatoire
+    </div>
+   
+  
+<br>
+LastName : <input type="text" required  minlength="3" pattern="[a-zA-Z]*" name="firstname" ngModel #last="ngModel">
+<div *ngIf="last.invalid && last.touched">
+    <div *ngIf="last.errors['required']">
+        FirstName obligatoire
+    </div>
+    <div *ngIf="last.errors?.['minlength']">
+       il faut minimum {{ last.errors['minlength'].requiredLength}} caractères alors que vous avez écrits {{ last.errors['minlength'].actualLength}}
+    </div>
+    <div *ngIf="last.hasError('pattern')">
+       tous des lettres
+    </div>
+  
+</div>
+</div>
+Email <input name="email" type="email" pattern="^[a-zA-Z0-9._-]+@gmail.com" ngModel #email="ngModel"> 
+<div *ngIf="email.valid">
+    Vérifiez votre email
+</div>
+
+</form> <br> -->
+touched:{{ first.touched }} <br>
+dirty:{{ first.dirty }} <br>
+valid:{{ first.valid }} <br>
+************
+***********************************************

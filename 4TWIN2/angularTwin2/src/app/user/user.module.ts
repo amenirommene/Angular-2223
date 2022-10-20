@@ -8,6 +8,7 @@ import { ListuserComponent } from '../listuser/listuser.component';
 import { UsersComponent } from '../users/users.component';
 import { UserDetailsComponent } from '../user-details/user-details.component';
 import { FormsModule } from '@angular/forms';
+import { UserFormComponent } from './user-form/user-form.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { FormsModule } from '@angular/forms';
     ListuserComponent,
     UsersComponent,
     UserDetailsComponent,
+    UserFormComponent,
 
   
   ],
