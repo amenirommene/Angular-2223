@@ -9,7 +9,8 @@ import { ListAccountComponent } from '../list-account/list-account.component';
 import { UserDetailsComponent } from '../user-details/user-details.component';
 import { UserFormComponent } from '../user-form/user-form.component';
 import { UserForm2Component } from './user-form2/user-form2.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserReactiveFormComponent } from './user-reactive-form/user-reactive-form.component';
 
 
 @NgModule({
@@ -20,12 +21,14 @@ import { FormsModule } from '@angular/forms';
     ListAccountComponent,
     UserDetailsComponent,
     UserFormComponent,
-    UserForm2Component
+    UserForm2Component,
+    UserReactiveFormComponent
   ],
   imports: [
     CommonModule,
     UserRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class UserModule { }

@@ -1,13 +1,14 @@
-<form  #f="ngForm">
+<form  #f="ngForm"  (ngSubmit)="onSubmit()" (keyup)="verif(f)">
     <table>
+        <div ngModelGroup="firstInfo" #sg="ngModelGroup">
         <tr>
             <td>FirstName</td>
             <td><input type="text" required  minlength="5" pattern="[a-zA-Z]*" name="firstname" [(ngModel)]="user.firstName" #first="ngModel">
             <div *ngIf="first.invalid">
-                <div *ngIf="first.errors?.['required']"> <!--- !first.valid ---->
+                <div *ngIf="first.hasError('required')"> <!--- !first.valid ---->
                     FirstName obligatoire
                 </div>
-                <div *ngIf="first.errors?.['minlength']"> <!--- !first.valid ---->
+                <div *ngIf="first.errors['minlength']"> <!--- !first.valid ---->
                     FirstName contient au minimum {{first.errors?.['minlength'].requiredLength}} caratctères alors que vous avez écrit
                     {{first.errors?.['minlength'].actualLength}}
                 </div>
@@ -35,6 +36,8 @@
             </td>
         
         </tr>
+    </div>
+        <div *ngIf="sg.valid">
         <tr>
             <td>Catégorie</td>
             <td>
@@ -69,8 +72,9 @@
                  </div>
             </td>
         </tr>
+    </div>
         <tr>
-            <td><button [disabled]="f.invalid" (click)="test(first.errors?.['pattern'])">Ajouter</button></td>
+            <td><input [disabled]="f.invalid" type="submit" value="ajouter"></td>
         </tr>
     </table>
 </form>

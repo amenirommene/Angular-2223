@@ -1,0 +1,19 @@
+<form [formGroup]="myForm" (keyup)="test()">
+    <div formGroupName="autres">
+first Name : <input type="text" formControlName="firstName"> 
+<div *ngIf="FirstName.invalid">
+<div *ngIf="FirstName.errors['required']">
+    FirstName obligatoire 
+</div>
+<div>
+    FirstName minim 5 
+</div>
+</div>
+<br>
+last Name : <input type="text" formControlName="lastName"> <br>
+email : <input type="text" formControlName="email"> <br>
+</div>
+categorie : <input type="text" formControlName="categorie"> <br>
+password : <input type="text" formControlName="password"> <br>
+<input type="submit" [disabled]="myForm.invalid">
+</form>
