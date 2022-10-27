@@ -1,0 +1,48 @@
+*************************************
+<form [formGroup]="myForm" (ngSubmit)="addUser()"> <!--property binding-->
+   <div formGroupName="autres">
+    <div class="form-group">
+      <label for="firstname">FirstName</label>
+      <input type="text" formControlName="firstName" class="form-control" id="firstname" placeholder="Enter FirstName">
+    </div>
+    <div *ngIf="myForm.get('autres').get('firstName').invalid && myForm.get('autres').get('firstName').touched">
+    <div *ngIf="myForm.controls['autres'].get('firstName').errors['required']" class="alert alert-danger" role="alert">
+        FirstName Obligatoire !
+      </div>
+      <div *ngIf="firstN.errors?.['minlength']" class="alert alert-danger" role="alert">
+       test
+     </div>
+     <div *ngIf="myControls['firstName'].hasError('pattern')" class="alert alert-danger" role="alert">
+        tous des lettres
+     </div>
+     </div>
+     <div class="form-group">
+        <label for="birthadte">birthadate</label>
+        <input type="text" formControlName="birthDate"  class="form-control" id="birthadte" placeholder="Enter LastName">
+      </div>
+    <div class="form-group">
+        <label for="lastname">LastName</label>
+        <input type="text" formControlName="last" class="form-control" id="lastname" placeholder="Enter LastName">
+      </div>
+        <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" formControlName="email"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      
+      </div>
+    
+    </div>
+    <div *ngIf="myForm.controls['autres'].valid">
+    <div class="form-group">
+        <label for="profession">Profession</label>
+        <input type="text" formControlName="profession" class="form-control" id="profession" placeholder="Enter LastName">
+      </div>
+      <div class="form-group">
+        <label for="ac">AccountCategory</label>
+        <input type="text" formControlName="accountCategory" class="form-control" id="ac" placeholder="Enter LastName">
+      </div>
+    </div>
+    <button type="submit"  class="btn btn-primary">Submit</button>
+  </form>
+
+  

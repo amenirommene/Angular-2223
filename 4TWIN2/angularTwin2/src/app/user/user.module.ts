@@ -7,8 +7,9 @@ import { ContentComponent } from '../content/content.component';
 import { ListuserComponent } from '../listuser/listuser.component';
 import { UsersComponent } from '../users/users.component';
 import { UserDetailsComponent } from '../user-details/user-details.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserFormComponent } from './user-form/user-form.component';
+import { UserReacttiveFormComponent } from './user-reacttive-form/user-reacttive-form.component';
 
 
 @NgModule({
@@ -19,13 +20,15 @@ import { UserFormComponent } from './user-form/user-form.component';
     UsersComponent,
     UserDetailsComponent,
     UserFormComponent,
+    UserReacttiveFormComponent,
 
   
   ],
   imports: [
     CommonModule,
     UserRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class UserModule { }

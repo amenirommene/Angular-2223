@@ -19,6 +19,7 @@ export class UserFormComponent implements OnInit {
     console.log(f);
     this.list.push(this.user);
     console.log(this.list);
+    this.user=new User();
   }
 
 }
