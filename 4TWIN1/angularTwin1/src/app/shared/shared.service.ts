@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { User } from '../model/user';
 
 @Injectable({
@@ -6,7 +8,8 @@ import { User } from '../model/user';
 })
 export class SharedService {
 
-  constructor() { 
+  urlUsers : string = "http://localhost:3000/users";
+  constructor(private _http:HttpClient) { 
     console.log("je suis shared service");
   }
 
@@ -20,6 +23,9 @@ export class SharedService {
     return nb;
   }
 
+  getAllUsersFromDB(): Observable<User[]>{
+  return this._http.get<User[]>(this.urlUsers);
+  }
   getAllUsers():User[]{
     return [ 
       { 

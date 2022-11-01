@@ -15,7 +15,8 @@ export class UserListComponent implements OnInit {
   constructor(private myservice:SharedService) { }
 
   ngOnInit(): void {
-    this.list=this.myservice.getAllUsers();
+    //this.list=this.myservice.getAllUsers();
+    this.myservice.getAllUsersFromDB().subscribe(data=>this.list=data);
             /*this.list = [ 
       { 
       idCustomer: 1, 

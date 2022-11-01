@@ -15,7 +15,7 @@ import { HomeComponent } from './home/home.component';
 import { UserComponent } from './user/user.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-
+import { HttpClientModule } from '@angular/common/http'
 @NgModule({ //méta data
   declarations: [ //liste des composants
     AppComponent, TestComponent, 
@@ -28,6 +28,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [],  //les services
   bootstrap: [AppComponent]  //quel composant lancer au démarrage de l'application (seulement au niveau du module racine)
