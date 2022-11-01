@@ -5,15 +5,40 @@ first Name : <input type="text" formControlName="firstName">
 <div *ngIf="FirstName.errors['required']">
     FirstName obligatoire 
 </div>
-<div>
+<div *ngIf="FirstName.errors['minlength']">
     FirstName minim 5 
+</div>
+<div *ngIf="FirstName.errors['pattern']">
+    Il ne faut que des lettres 
 </div>
 </div>
 <br>
 last Name : <input type="text" formControlName="lastName"> <br>
+<div *ngIf="myForm.get('autres').get('lastName').invalid">
+    <div *ngIf="myForm.get('autres').get('lastName').errors['required']">
+        Last Name obligatoire 
+    </div>
+    <div *ngIf="myForm.controls['autres'].get('lastName').errors['minlength']">
+        LastName minim 5 
+    </div>
+    <div *ngIf="myForm.controls['autres'].get('lastName').errors['pattern']">
+        Il ne faut que des lettres 
+    </div>
+    </div>
 email : <input type="text" formControlName="email"> <br>
 </div>
-categorie : <input type="text" formControlName="categorie"> <br>
-password : <input type="text" formControlName="password"> <br>
+categorie : <input type="text" formControlName="categorie">
+<div *ngIf="categorie.invalid">
+    categorie obligatoire
+</div> <br>
+password : <input type="text" formControlName="password">
+<div *ngIf="myForm.get('password').invalid">
+<div *ngIf="myForm.get('password').errors['required']">
+    password obligatoire
+</div>  
+<div *ngIf="myForm.get('password').errors['pattern']">
+    Il faut respecter le format requis
+</div>
+</div>
 <input type="submit" [disabled]="myForm.invalid">
 </form>

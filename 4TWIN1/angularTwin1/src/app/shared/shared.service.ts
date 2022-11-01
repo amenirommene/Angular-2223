@@ -1,25 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { User } from '../model/user';
-import { SharedService } from '../shared/shared.service';
 
-@Component({
-  selector: 'app-user-list',
-  templateUrl: './user-list.component.html',
-  styleUrls: ['./user-list.component.css']
+@Injectable({
+  providedIn: 'root'
 })
-export class UserListComponent implements OnInit {
+export class SharedService {
 
-  categorie1 : string = "test1";
-  categorie2 : string = "test2";
-  list : User[]
-  constructor(private myservice:SharedService) { }
+  constructor() { 
+    console.log("je suis shared service");
+  }
 
-  ngOnInit(): void {
-    this.list=this.myservice.getAllUsers();
-            /*this.list = [ 
+  fetchNbInList(list: any, attribute:string, attributeVal: string){
+    let nb = 0;
+    for (let i of list){
+      if (i[attribute] === attributeVal){
+        nb = nb+1;
+      }
+    }
+    return nb;
+  }
+
+  getAllUsers():User[]{
+    return [ 
       { 
       idCustomer: 1, 
-      firstName: "Mila", 
+      firstName: "MilaTWIN1", 
       lastName: " Kunis", 
       birthDate: "1999-06-30", 
       accountCategory: "Admin", 
@@ -72,18 +77,9 @@ export class UserListComponent implements OnInit {
       picture: "https://bootdey.com/img/Content/avatar/avatar5.png", 
       profession: "Software Engineer" 
       }
-      ]*/
-      
-  }
+      ]
+     
 
-  testValue(val){
-    this.categorie1=val;
-    console.log(this.categorie1);
-  }
-
-  delete(i:number){
-    this.list.splice(i,1);
 
   }
-
 }

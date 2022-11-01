@@ -11,6 +11,7 @@ import { UserFormComponent } from '../user-form/user-form.component';
 import { UserForm2Component } from './user-form2/user-form2.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserReactiveFormComponent } from './user-reactive-form/user-reactive-form.component';
+import { SharedService } from '../shared/shared.service';
 
 
 @NgModule({
@@ -29,6 +30,9 @@ import { UserReactiveFormComponent } from './user-reactive-form/user-reactive-fo
     UserRoutingModule,
     FormsModule,
     ReactiveFormsModule
+  ],
+  providers:[
+   // SharedService
   ]
 })
 export class UserModule { }
