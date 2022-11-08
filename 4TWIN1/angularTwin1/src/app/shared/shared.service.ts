@@ -22,14 +22,26 @@ export class SharedService {
     }
     return nb;
   }
-
+  deleteUser(id:number){
+    return this._http.delete(this.urlUsers+"/"+id)
+  }
+  addUser(u:User):Observable<User>{
+    return this._http.post<User>(this.urlUsers,u);
+  }
   getAllUsersFromDB(): Observable<User[]>{
   return this._http.get<User[]>(this.urlUsers);
+  }
+
+  getUser(id:number):Observable<User>{
+    return this._http.get<User>(this.urlUsers+'/'+id);
+  }
+  updateUser(user:User){
+    return this._http.put(this.urlUsers+"/"+user.id,user);
   }
   getAllUsers():User[]{
     return [ 
       { 
-      idCustomer: 1, 
+      id: 1, 
       firstName: "MilaTWIN1", 
       lastName: " Kunis", 
       birthDate: "1999-06-30", 
@@ -40,7 +52,7 @@ export class SharedService {
       profession: "Software Engineer" 
       }, 
       { 
-      idCustomer: 2, 
+      id: 2, 
       firstName: "George", 
       lastName: "Clooney", 
       birthDate: "1999-06-30", 
@@ -51,7 +63,7 @@ export class SharedService {
       profession: "Software Engineer" 
       }, 
       { 
-      idCustomer: 3, 
+      id: 3, 
       firstName: "George", 
       lastName: "Clooney", 
       birthDate: "1999-06-30", 
@@ -62,7 +74,7 @@ export class SharedService {
       profession: "Software Engineer" 
       }, 
       { 
-      idCustomer: 4, 
+      id: 4, 
       firstName: "Ryan", 
       lastName: "Gossling", 
       birthDate:"1999-06-30", 
@@ -73,7 +85,7 @@ export class SharedService {
       profession: "Software Engineer"
       }, 
       { 
-      idCustomer: 5, 
+      id: 5, 
       firstName: "Robert", 
       lastName: "Downey", 
       birthDate: "1999-06-30", 

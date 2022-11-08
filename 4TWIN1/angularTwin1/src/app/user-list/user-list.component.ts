@@ -11,12 +11,15 @@ export class UserListComponent implements OnInit {
 
   categorie1 : string = "test1";
   categorie2 : string = "test2";
-  list : User[]
+  list : User[]=[];
   constructor(private myservice:SharedService) { }
 
   ngOnInit(): void {
     //this.list=this.myservice.getAllUsers();
-    this.myservice.getAllUsersFromDB().subscribe(data=>this.list=data);
+    this.myservice.getAllUsersFromDB().subscribe(data=>
+      {this.list=data, console.log(this.list)}
+      );
+   // console.log(this.list);
             /*this.list = [ 
       { 
       idCustomer: 1, 
@@ -83,7 +86,10 @@ export class UserListComponent implements OnInit {
   }
 
   delete(i:number){
-    this.list.splice(i,1);
+   // this.list.splice(i,1);
+   this.myservice.deleteUser(this.list[i].id).subscribe(()=>this.myservice.getAllUsersFromDB().subscribe(
+    res=>this.list=res));
+
 
   }
 

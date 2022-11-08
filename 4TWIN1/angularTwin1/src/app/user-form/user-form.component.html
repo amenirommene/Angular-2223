@@ -1,3 +1,4 @@
+<h1>Template driven Form</h1>
 <form  #f="ngForm"  (ngSubmit)="onSubmit()" (keyup)="verif(f)">
     <table>
         <div ngModelGroup="firstInfo" #sg="ngModelGroup">
@@ -74,7 +75,8 @@
         </tr>
     </div>
         <tr>
-            <td><input [disabled]="f.invalid" type="submit" value="ajouter"></td>
+            <td><input [disabled]="f.invalid" type="submit" value="Save"></td>
+         
         </tr>
     </table>
 </form>
