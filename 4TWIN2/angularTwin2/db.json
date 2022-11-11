@@ -31,7 +31,7 @@
     },
     {
       "id": 4,
-      "firstName": "Ryanertyuiop",
+      "firstName": "Ryanertyuioprtyuiop",
       "lastName": "Gossling",
       "birthDate": "1999-06-30",
       "accountCategory": "Golden",
@@ -50,6 +50,15 @@
       "password": "test",
       "picture": "https://bootdey.com/img/Content/avatar/avatar5.png",
       "profession": "Software Engineer"
+    },
+    {
+      "firstName": "azertyuiop",
+      "lastName": "azertyuiop",
+      "email": "mila@gmail.com",
+      "birthDate": "12/12/1999",
+      "profession": "zertyuio",
+      "accountCategory": "Customer",
+      "id": 6
     }
   ]
 }

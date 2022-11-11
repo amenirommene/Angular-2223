@@ -17,7 +17,7 @@ export class UserReacttiveFormComponent implements OnInit {
   constructor(private us:UserService, private ac:ActivatedRoute) { }
 
   ngOnInit(): void {
-
+    this.createForm(new User());
     this.ac.paramMap.subscribe(params=>{
       this.id=+params.get('id'); 
       if (this.id){
@@ -28,8 +28,6 @@ export class UserReacttiveFormComponent implements OnInit {
            this.createForm(this.user)}
            )
 
-      }else{
-          this.createForm(new User());
       }}
       )}
       
