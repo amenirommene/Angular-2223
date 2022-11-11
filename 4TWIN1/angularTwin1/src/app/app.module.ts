@@ -3,26 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TestComponent } from './test/test.component';
-import { Test2Component } from './test2/test2.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { SliderComponent } from './slider/slider.component';
-import { UserListComponent } from './user-list/user-list.component';
-import { FooterComponent } from './footer/footer.component';
-import { ListAccountComponent } from './list-account/list-account.component';
+import { NavbarComponent } from './shared/components/navbar/navbar.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
 import { FormsModule } from '@angular/forms';
-import { HomeComponent } from './home/home.component';
-import { UserComponent } from './user/user.component';
-import { UserDetailsComponent } from './user-details/user-details.component';
-import { NotFoundComponent } from './not-found/not-found.component';
+import { HomeComponent } from './pages/home/home.component';
+import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http'
 @NgModule({ //méta data
   declarations: [ //liste des composants
-    AppComponent, TestComponent, 
-    Test2Component, NavbarComponent, FooterComponent,
-     HomeComponent,
-     NotFoundComponent
-  
+    AppComponent, 
+    NavbarComponent, 
+    FooterComponent,
+    HomeComponent,
+    NotFoundComponent
   ],
   imports: [  //liste des modules
     BrowserModule,

@@ -2,16 +2,16 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { UserRoutingModule } from './user-routing.module';
-import { UserComponent } from '../user/user.component';
-import { SliderComponent } from '../slider/slider.component';
-import { UserListComponent } from '../user-list/user-list.component';
-import { ListAccountComponent } from '../list-account/list-account.component';
-import { UserDetailsComponent } from '../user-details/user-details.component';
-import { UserFormComponent } from '../user-form/user-form.component';
-import { UserForm2Component } from './user-form2/user-form2.component';
+import { UserComponent } from '../user/user/user.component';
+import { SliderComponent } from './slider/slider.component';
+import { UserListComponent } from './user-list/user-list.component';
+import { ListAccountComponent } from './list-account/list-account.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
+import { UserFormComponent } from './user-form/user-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserReactiveFormComponent } from './user-reactive-form/user-reactive-form.component';
-import { SharedService } from '../shared/shared.service';
+import { UserService } from './shared/user.service';
+
 
 
 @NgModule({
@@ -22,8 +22,9 @@ import { SharedService } from '../shared/shared.service';
     ListAccountComponent,
     UserDetailsComponent,
     UserFormComponent,
-    UserForm2Component,
-    UserReactiveFormComponent
+    UserReactiveFormComponent,
+    UserComponent
+
   ],
   imports: [
     CommonModule,
@@ -32,7 +33,7 @@ import { SharedService } from '../shared/shared.service';
     ReactiveFormsModule
   ],
   providers:[
-   // SharedService
+   UserService
   ]
 })
 export class UserModule { }

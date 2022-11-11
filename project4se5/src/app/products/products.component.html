@@ -1,0 +1,23 @@
+<p>products works!</p>
+
+<table>
+    <tr>
+        <td>Title</td>
+        <td>Quatity</td>
+        <td>Price</td>
+        <td>Like</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr *ngFor="let p of listProduct">
+        <td>{{p.title}}</td>
+        <td>{{p.quantity}}</td>
+        <td>{{p.price}}</td>
+        <td>{{p.like}}</td>
+        <td><button *ngIf="p.quantity > 0" (click)="buy(p)">Buy</button>
+            <button [hidden]="p.quantity == 0" (click)="buy(p)">Buy</button>
+            <button [disabled]="p.quantity == 0" (click)="buy(p)">Buy</button>
+        </td>
+        <td><button (click)="like(p)">Like</button></td>
+    </tr>
+</table>

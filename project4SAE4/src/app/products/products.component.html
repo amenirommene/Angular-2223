@@ -1,0 +1,20 @@
+<table>
+    <tr>
+        <td>Title</td>
+        <td>Quantity</td>
+        <td>Like</td>
+        <td>Price</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr *ngFor="let p of listProducts, let i=index">
+        <td>{{i}} ** {{ p.title }}</td>
+        <td>{{ p.quantity }}</td>
+        <td>{{ p.like }}</td>
+        <td>{{ p.price }}</td>
+        <td><button (click)="addLike(p)">Like</button></td>
+        <td><button (click)="buyProduct(i)" *ngIf="p.quantity != 0">Buy ngIf</button>
+            <button (click)="buyProduct(i)" [hidden]="p.quantity == 0">Buy hidden</button></td>
+            <button (click)="buyProduct(i)" [disabled]="p.quantity  == 0">Buy</button>
+</tr>
+</table>
