@@ -1,5 +1,5 @@
-*************************************
-<form [formGroup]="myForm" (ngSubmit)="addUser()"> <!--property binding-->
+*************************************Reactive Form******
+<form [formGroup]="myForm" (ngSubmit)="saveUser()"> <!--property binding-->
    <div formGroupName="autres">
     <div class="form-group">
       <label for="firstname">FirstName</label>
@@ -12,7 +12,7 @@
       <div *ngIf="firstN.errors?.['minlength']" class="alert alert-danger" role="alert">
        test
      </div>
-     <div *ngIf="myControls['firstName'].hasError('pattern')" class="alert alert-danger" role="alert">
+     <div *ngIf="myControls['firstName']?.hasError('pattern')" class="alert alert-danger" role="alert">
         tous des lettres
      </div>
      </div>

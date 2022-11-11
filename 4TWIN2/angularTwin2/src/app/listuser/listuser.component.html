@@ -56,7 +56,7 @@ Rechercher (ngModel) : <input [(ngModel)] = "categorie2"> {{categorie2}}
 								<span class="user-subhead">{{user.accountCategory}}</span>
 							</td>
 							<td>
-								<a [routerLink]="['/user-details',user.idCustomer]">Details</a>
+								<a [routerLink]="['/user-details',user.id]">Details</a>
 							</td>
 							<td>
 								{{user.birthDate}}
@@ -68,13 +68,13 @@ Rechercher (ngModel) : <input [(ngModel)] = "categorie2"> {{categorie2}}
 								<a href="#">{{user.email}}</a>
 							</td>
 							<td style="width: 20%;">
-								<a [routerLink]="['user-details',user.idCustomer]" class="table-link">
+								<a [routerLink]="['user-details',user.id]" class="table-link">
 									<span class="fa-stack">
 										<i class="fa fa-square fa-stack-2x"></i>
 										<i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
 									</span>
 								</a>
-								<a href="#" class="table-link">
+								<a [routerLink]="['user-update',user.id]" class="table-link">
 									<span class="fa-stack">
 										<i class="fa fa-square fa-stack-2x"></i>
 										<i class="fa fa-pencil fa-stack-1x fa-inverse" ></i>
