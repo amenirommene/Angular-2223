@@ -1,0 +1,19 @@
+
+
+<div class="col-lg-4 my-3">
+    <div class="card" style="width: 18rem">
+      <img
+        [src]="image"
+        class="card-img-top img-fluid w-50 align-self-center"
+        alt="..."
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{title}}</h5>
+        <p class="card-text">
+          {{description}}
+        </p>
+        <a href="#" class="btn btn-primary">show all</a>
+        <button (click)="delete()" class="btn btn-primary">Delete</button>
+      </div>
+    </div>
+  </div>

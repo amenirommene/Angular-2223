@@ -5,7 +5,8 @@
         <!---start AccountList section--->
         <app-list-account></app-list-account>
         <!---end AccountList section--->
-        <app-user-reactive-form></app-user-reactive-form>
+        <button class="btn btn-primary" (click)="showForm()">Add User</button>
+        <app-user-reactive-form (aded)="addUser($event)" *ngIf="show"></app-user-reactive-form>
         <!---Formulaire d'ajout-->
         <app-user-form></app-user-form>
         <!---fin form-->

@@ -1,4 +1,11 @@
 <div class="container">
+  <div class="row">
+    <div class="col-lg-4 my-3" *ngFor="let ac of listAccounts">
+  <app-account (deleted)="deleteAccount(ac)" [image]="ac.image" [title]="ac.title" [description]="ac.description"></app-account>
+  </div>
+  </div>
+</div>
+<!---<div class="container">
     <div class="row">
       <div class="col-lg-4 my-3">
         <div class="card" style="width: 18rem">
@@ -71,3 +78,4 @@
     </div>
   </div>
 
+--->

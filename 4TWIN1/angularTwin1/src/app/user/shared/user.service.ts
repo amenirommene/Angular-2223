@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Account } from 'src/app/shared/model/account';
 import { User } from 'src/app/shared/model/user';
 import { UserModule } from '../user.module';
 
@@ -8,8 +9,16 @@ import { UserModule } from '../user.module';
 export class UserService {
 
   urlUsers : string = "http://localhost:3000/users";
+  urlAccounts : string = "http://localhost:3000/accounts";
   constructor(private _http:HttpClient) { 
     console.log("je suis shared service");
+  }
+  getAllAccounts():Observable<Account[]>{
+    return this._http.get<Account[]>(this.urlAccounts);
+  }
+
+  deleteAccount(ac:Account):Observable<Account>{
+    return this._http.delete<Account>(this.urlAccounts+"/"+ac.id);
   }
   deleteUser(id:number){
     return this._http.delete(this.urlUsers+"/"+id)

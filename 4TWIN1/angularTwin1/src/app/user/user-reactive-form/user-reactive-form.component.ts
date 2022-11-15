@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { User } from 'src/app/shared/model/user';
 
 @Component({
   selector: 'app-user-reactive-form',
@@ -9,8 +10,20 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class UserReactiveFormComponent implements OnInit {
 
   myForm :  FormGroup;
+  @Output() aded = new EventEmitter<any>();
   constructor() { }
-
+  save(){
+    let user = new User();
+    user.accountCategory=this.myForm.get('categorie').value;
+    user.password=this.myForm.get('password').value;
+    user.firstName=this.myForm.controls['autres'].get('firstName').value;
+    user.lastName=this.myForm.controls['autres'].get('lastName').value;
+    user.email=this.myForm.controls['autres'].get('email').value;
+    //user.lastName=this.myForm.controls['autres'].get('lastName').value;
+   this.aded.emit({"user":user,"msg":"Success"});
+   this.myForm.reset();
+  }
+  
   ngOnInit(): void {
     this.myForm=new FormGroup({
       autres : new FormGroup({

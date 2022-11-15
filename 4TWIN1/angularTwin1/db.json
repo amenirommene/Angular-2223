@@ -74,6 +74,74 @@
       "email": "mmm@gmail.com",
       "password": "azertyuio",
       "id": 6
+    },
+    {
+      "accountCategory": "Customer",
+      "password": "azertyuio",
+      "firstName": "azertyuiinput",
+      "lastName": "azertyuio",
+      "email": "ameni.rommene@gmail.com",
+      "id": 7
+    },
+    {
+      "accountCategory": "Customer",
+      "password": "pmlkjhgf",
+      "firstName": "pmlkjhgf",
+      "lastName": "pmlkjhgfd",
+      "email": "ameni.rommene@gmail.com",
+      "id": 8
+    },
+    {
+      "accountCategory": "Customer",
+      "password": "pmlkjhgf",
+      "firstName": "pmlkjhgf",
+      "lastName": "pmlkjhgfds",
+      "email": "mmm@gmail.com",
+      "id": 9
+    },
+    {
+      "accountCategory": "Customer",
+      "password": "azertyuij",
+      "firstName": "edfghjklm",
+      "lastName": "esdfghjklm",
+      "email": "j@gmail.com",
+      "id": 10
+    },
+    {
+      "accountCategory": "Customer",
+      "password": "azerfdcfvghjk",
+      "firstName": "azertyuiopmlkjhgf",
+      "lastName": "azerfdcfvghjk",
+      "email": "j@gmail.com",
+      "id": 11
+    },
+    {
+      "accountCategory": "Customer",
+      "password": "aqzsedrftyuio",
+      "firstName": "sdfgtyhujiko",
+      "lastName": "sxdcfghjkl",
+      "email": "mmm@gmail.com",
+      "id": 12
+    }
+  ],
+  "accounts": [
+    {
+      "id": 1,
+      "image": "../assets/images/admin.png",
+      "title": "Admin Account",
+      "description": "An admin account has privileges to manage services for other people in the App."
+    },
+    {
+      "id": 2,
+      "image": "../assets/images/customer.png",
+      "title": "Customer Account",
+      "description": "An admin account has privileges to manage services for other people in the App."
+    },
+    {
+      "id": 3,
+      "image": "../assets/images/golden.png",
+      "title": "Golden Account",
+      "description": "An admin account has privileges to manage services for other people in the App."
     }
   ]
 }

@@ -1,4 +1,4 @@
-<form [formGroup]="myForm" (keyup)="test()">
+<form [formGroup]="myForm" (ngSubmit)="save()">
     <div formGroupName="autres">
 first Name : <input type="text" formControlName="firstName"> 
 <div *ngIf="FirstName.invalid">
