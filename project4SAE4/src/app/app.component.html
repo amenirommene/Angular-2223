@@ -1,3 +1,11 @@
+<a routerLink="home">Home</a>
+<a routerLink="products">Products</a>
+<a [routerLink]="['add']">Add Product</a>
+<!----Il faut charger ici la vue du composant-->
+<router-outlet></router-outlet>
+
 Je suis AppComponent {{ title }}
 <button (click)="f()">Click me!</button>
-<app-products></app-products>
+
+
+

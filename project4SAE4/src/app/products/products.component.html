@@ -1,3 +1,16 @@
+<h1>Two way data-binding sans NgModel</h1>
+<div>
+Title : <input type="text" [value]="title" (keyup)="f(t.value)" #t> {{title}}
+</div>
+<h1>Two way data-binding avec NgModel</h1>
+<div>
+    Title : <input type="text" [(ngModel)]="title2"> {{title2}}
+    </div>
+
+<h1>Recherche par prix</h1>
+<div>
+    Rechercher : <input type="number" [(ngModel)]="price">
+</div>
 <table>
     <tr>
         <td>Title</td>
@@ -6,15 +19,19 @@
         <td>Price</td>
         <td></td>
         <td></td>
+        <td>Détails</td>
     </tr>
-    <tr *ngFor="let p of listProducts, let i=index">
+    <div *ngFor="let p of listProducts, let i=index">
+    <tr *ngIf="p.price <= price">
         <td>{{i}} ** {{ p.title }}</td>
         <td>{{ p.quantity }}</td>
         <td>{{ p.like }}</td>
         <td>{{ p.price }}</td>
         <td><button (click)="addLike(p)">Like</button></td>
         <td><button (click)="buyProduct(i)" *ngIf="p.quantity != 0">Buy ngIf</button>
-            <button (click)="buyProduct(i)" [hidden]="p.quantity == 0">Buy hidden</button></td>
-            <button (click)="buyProduct(i)" [disabled]="p.quantity  == 0">Buy</button>
-</tr>
+            <button (click)="buyProduct(i)" [hidden]="p.quantity == 0">Buy hidden</button>
+            <button (click)="buyProduct(i)" [disabled]="p.quantity  == 0">Buy</button></td>
+<td><a [routerLink]="['/details',p.id]">Détails</a></td>
+        </tr>
+</div>
 </table>

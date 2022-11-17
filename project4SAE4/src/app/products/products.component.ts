@@ -8,9 +8,15 @@ import { Product } from '../shared/model/product';
 })
 export class ProductsComponent implements OnInit {
 
+  price: number = 1000;
+  title :string = "test2";
+  title2 :string = "testNgmodel";
   listProducts: Product[];
   constructor() { } //injection des services
-
+  
+  f(newval:string){
+    this.title=newval
+  }
   ngOnInit(): void { //méthode hook, initiliser les propriété
     this.listProducts=[
       {id: 1, title: "T-shirt 1", price: 18, quantity: 0, like: 0},
