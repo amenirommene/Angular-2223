@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Account } from '../models/account';
 import { User } from '../models/user';
 import { UserModule } from '../user/user.module';
 
@@ -15,6 +16,7 @@ export class UserService {
   }
 
  userUrl="http://localhost:3000/users";
+ accountUrl="http://localhost:3000/accounts";
   constructor(private _http:HttpClient) { }
   getAllUsers() : User[]{
     return [
@@ -85,7 +87,9 @@ export class UserService {
    }
    return nb;
   }
-
+  getAllAccountsFromDb():Observable<Account[]>{
+    return this._http.get<Account[]>(this.accountUrl);
+  }
   getAllUsersFromDb():Observable<User[]>{
     return this._http.get<User[]>(this.userUrl);
   }

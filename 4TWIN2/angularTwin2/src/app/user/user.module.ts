@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserFormComponent } from './user-form/user-form.component';
 import { UserReacttiveFormComponent } from './user-reacttive-form/user-reacttive-form.component';
 import { UserService } from '../shared/user.service';
+import { AccountComponent } from './account/account.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { UserService } from '../shared/user.service';
     UserDetailsComponent,
     UserFormComponent,
     UserReacttiveFormComponent,
+    AccountComponent,
 
   
   ],
