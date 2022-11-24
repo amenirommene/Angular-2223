@@ -13,7 +13,7 @@ export class ProductsComponent implements OnInit {
   title2 :string = "testNgmodel";
   listProducts: Product[];
   constructor() { } //injection des services
-  
+ 
   f(newval:string){
     this.title=newval
   }

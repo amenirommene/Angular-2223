@@ -1,1 +1,53 @@
-<p>form-product works!</p>
+<form #f="ngForm">
+<table>
+<tr>
+    <td>Id</td>
+    <td><input type="text" required pattern="[0-9]*" #id="ngModel" [(ngModel)]="p.id" name="monId">
+        <div *ngIf="id.invalid">
+            <div *ngIf="id.errors['required']">
+                Champ obligatoire
+            </div>
+            <div *ngIf="id.errors['pattern']">
+                Ce champ ne doit contenir que des chiffres
+            </div>
+        </div></td>
+</tr>
+<tr>
+    <td>Title</td>
+    <!---#title: variable référence de template-->
+    <td><input name="title"  type="text" required minlength="5" #title="ngModel" ngModel>
+    <div *ngIf="title.invalid">
+    <div *ngIf="title.errors['required']">
+        Champ obligatoire
+    </div>
+    <div *ngIf="title.errors['minlength']">
+        Ce champ doit contenir au moins 
+        {{ title.errors['minlength'].requiredLength }} caractères
+        alors que vous avez écrit 
+        {{ title.errors['minlength'].actualLength }}
+    </div>
+</div>  
+</td>
+</tr>
+<tr>
+    <td>Quantity</td>
+    <td><input type="text" pattern="[1-9][0-9]{2}" name="qte" ngModel #qte="ngModel">
+        <div *ngIf="qte.invalid">
+            La quantité > 0 et contient 3 chiffres
+        </div>
+    </td>
+</tr>
+<tr>
+    <td></td>
+    <td>
+        <button *ngIf="id.valid && title.valid && qte.valid">Save</button>
+        <button [disabled]="id.invalid ||  title.invalid || qte.invalid">Save</button>
+        <button (click)="addProduct()" [disabled]="f.invalid">Save</button>
+    </td>
+</tr>
+</table>
+</form>
+
+touched: {{title.touched}} <br>
+pristine : {{title.pristine}} <br>
+errors: {{title.errors}}<br>

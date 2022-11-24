@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { FormProductComponent } from './form-product/form-product.component';
 import { DetailsProductComponent } from './details-product/details-product.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [ //les composants attachés au module
@@ -17,7 +18,8 @@ import { DetailsProductComponent } from './details-product/details-product.compo
     ProductsComponent,
     HomeComponent,
     FormProductComponent,
-    DetailsProductComponent
+    DetailsProductComponent,
+    NotFoundComponent
   ],
   imports: [//les modules qu'on besoin dans les composants liés à ce module
     BrowserModule,
