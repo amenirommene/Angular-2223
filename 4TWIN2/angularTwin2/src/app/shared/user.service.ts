@@ -18,6 +18,9 @@ export class UserService {
  userUrl="http://localhost:3000/users";
  accountUrl="http://localhost:3000/accounts";
   constructor(private _http:HttpClient) { }
+  getUsersByAccountCategory(categorie:string):Observable<User[]>{
+ return this._http.get<User[]>(this.userUrl+"?accountCategory="+categorie)
+  }
   getAllUsers() : User[]{
     return [
       {
@@ -89,6 +92,10 @@ export class UserService {
   }
   getAllAccountsFromDb():Observable<Account[]>{
     return this._http.get<Account[]>(this.accountUrl);
+  }
+  deleteAccount(ac:Account):Observable<Account>{
+    console.log("delete account");
+    return this._http.delete<Account>(this.accountUrl+"/"+ac.id);
   }
   getAllUsersFromDb():Observable<User[]>{
     return this._http.get<User[]>(this.userUrl);

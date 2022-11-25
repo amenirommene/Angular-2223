@@ -2,10 +2,12 @@
 <app-silde></app-silde>
 <!---end slide--->
 <!---start usersList section--->
-<app-content></app-content>
+<app-content (notified2)="getUsers($event)"></app-content>
 <app-user-reacttive-form></app-user-reacttive-form>
-<app-user-form></app-user-form>
-<app-listuser></app-listuser>
+<app-user-form #addform (notified)="addUser($event)"></app-user-form>
+addform : {{addform.nb}}
+<input type="text" [(ngModel)]="categorie">
+<app-listuser [categorie]="categorie"></app-listuser>
 <!---end usersList section--->
 
 <router-outlet></router-outlet>

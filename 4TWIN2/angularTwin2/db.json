@@ -59,12 +59,57 @@
       "profession": "zertyuio",
       "accountCategory": "Customer",
       "id": 6
+    },
+    {
+      "firstName": "taha",
+      "birthDate": "12/12/2000",
+      "lastName": "azertyuio",
+      "email": "ameni.rommene@gmail.com",
+      "password": "zertyuio",
+      "profession": "edrftgyuio",
+      "accountCategory": "Blocked",
+      "id": 7
+    },
+    {
+      "firstName": "ahmed",
+      "birthDate": "12/12/1998",
+      "lastName": "azertyuio",
+      "email": "ameni.rommene@gmail.com",
+      "password": "azertyuio",
+      "profession": "azertyu",
+      "accountCategory": "Customer",
+      "id": 8
+    },
+    {
+      "firstName": "azertyuiop",
+      "birthDate": "12/12/2000",
+      "lastName": "azertyuio",
+      "email": "mmm@gmail.com",
+      "password": "ertyui",
+      "profession": "zertyuio",
+      "accountCategory": "Customer",
+      "id": 9
+    },
+    {
+      "firstName": "azertyuiop",
+      "birthDate": "12/12/2000",
+      "lastName": "ertyuiop",
+      "email": "mmm@gmail.com",
+      "id": 10
     }
   ],
-  "accounts":[
-    {"id":1,"title":"Admin Account", "image":"", "description":"**"},
-    {"id":1,"title":"Admin Account", "image":"", "description":"**"},
-    {"id":1,"title":"Admin Account", "image":"", "description":"**"},
-    {"id":1,"title":"Admin Account", "image":"", "description":"**"}
+  "accounts": [
+    {
+      "id": 1,
+      "title": "Admin Account",
+      "image": "../assets/images/admin.png",
+      "description": "An admin account has privileges to manage services for other people in the App."
+    },
+    {
+      "id": 3,
+      "title": "Blocked Account",
+      "image": "../assets/images/blocked.png",
+      "description": "An admin account has privileges to manage services for other people in the App."
+    }
   ]
 }

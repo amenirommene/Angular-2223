@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { User } from '../models/user';
 import { UserService } from '../shared/user.service';
 
@@ -9,13 +9,21 @@ import { UserService } from '../shared/user.service';
 })
 export class ListuserComponent implements OnInit {
 
-  categorie : string="Customer";
+  @Input() categorie : string="";
   sourceImage : string = '../assets/images/admin.png';
   nb2 : number = 8;
   nb : number = 5;
   list : User[]=[];
   setNb(newval){
     this.nb = newval;
+  }
+
+  ngOnChanges(changes:SimpleChanges){
+    console.log(changes);
+  }
+  getUsersByCategorie(cat:string){
+    console.log(cat);
+   this.us.getUsersByAccountCategory(cat).subscribe(res=>{this.list=res; console.log(res)});
   }
   //ce n'est pas une méthode hook
   constructor(private us:UserService) { 
@@ -29,14 +37,19 @@ export class ListuserComponent implements OnInit {
    console.log(this.list);
 
   }
+
+  getAllUsers(){
+    console.log("getAllUsers()");
+    this.us.getAllUsersFromDb().subscribe(res=>
+      { this.list=res, 
+        console.log(this.list), 
+        console.log(this.us.fetchNbInList(this.list,"firstName", "Robert"))
+      });
+  }
   ngOnInit(): void { //méthode hook qui permet d'initiliser les propriétés 
   console.log ("je suis ngOnInit()");
   //this.list=this.us.getAllUsers();
-  this.us.getAllUsersFromDb().subscribe(res=>
-    { this.list=res, 
-      console.log(this.list), 
-      console.log(this.us.fetchNbInList(this.list,"firstName", "Robert"))
-    });
+  this.getAllUsers();
  // console.log(this.list);
  // console.log(this.us.fetchNbInList(this.list,"firstName", "Robert"));
   }

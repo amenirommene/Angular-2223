@@ -1,8 +1,9 @@
 <div class="container">
   <div class="row">
-    <div class="col-lg-4 my-3">
-      <app-account></app-account>
-      <app-account></app-account>
+    <div class="col-lg-4 my-3" *ngFor="let ac of listAccounts">
+
+      <app-account (notified1)="showUsers(ac.title)" (deleted)="delete(ac)" [image]="ac.image" [title]="ac.title" [description]="ac.description"></app-account>
+      
     </div>
     </div>
       </div>
