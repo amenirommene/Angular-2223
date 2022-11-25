@@ -1,5 +1,8 @@
 <p>products works!</p>
-
+<input type="text" [(ngModel)]="title"> {{title}}
+<div>
+Recherche : <input type="number" [(ngModel)]="price">
+</div>
 <table>
     <tr>
         <td>Title</td>
@@ -9,15 +12,18 @@
         <td></td>
         <td></td>
     </tr>
-    <tr *ngFor="let p of listProduct">
+    <div *ngFor="let p of listProduct">
+    <tr *ngIf="p.price <= price">
         <td>{{p.title}}</td>
         <td>{{p.quantity}}</td>
-        <td>{{p.price}}</td>
+        <td >{{p.price}}</td>
         <td>{{p.like}}</td>
         <td><button *ngIf="p.quantity > 0" (click)="buy(p)">Buy</button>
             <button [hidden]="p.quantity == 0" (click)="buy(p)">Buy</button>
             <button [disabled]="p.quantity == 0" (click)="buy(p)">Buy</button>
         </td>
         <td><button (click)="like(p)">Like</button></td>
+    <td><a [routerLink]="['/detail',p.id]">Détails</a></td>
     </tr>
+</div>
 </table>

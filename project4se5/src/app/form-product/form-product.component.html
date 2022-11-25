@@ -1,0 +1,65 @@
+<form ngForm #f="ngForm" >
+   <table>
+    <!-- <tr>
+        <td>test</td>
+        <td><input type="text" required name="test"></td>
+    </tr> -->
+    <tr>
+        <td>id</td>
+        <td><input type="text" required pattern="[0-9]*" [(ngModel)]="p.id" name="id" #id="ngModel">
+            <div *ngIf="id.invalid">
+                <div *ngIf="id.errors['required']">
+                    
+                   Id obligatoire
+                </div>
+                <div *ngIf="id.errors['pattern']">
+                    
+                    Que des chiffres
+                 </div>
+                <!---variable référence de template -->
+                
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>Title</td>
+        <td><input name="titlep" [(ngModel)]="p.title" type="text" value="val" required minlength="5" #title="ngModel">
+        <div *ngIf="title.invalid && title.touched">
+            <div *ngIf="title.errors['required']">
+                
+               Title obligatoire
+            </div>
+            <div *ngIf="title.errors['minlength']">
+                
+                Minimum {{ title.errors['minlength'].requiredLength }} caractères alors
+                que vous avez écrit {{title.errors['minlength'].actualLength}}
+             </div>
+            <!---variable référence de template -->
+            
+        </div>
+    </td>
+    </tr>
+    <tr>
+        <td>Quantité</td>
+        <td><input type="text" name="qte" pattern="[1-9][0-9]{2}" [(ngModel)]="p.quantity" #qte="ngModel" >
+        <div *ngIf="qte.invalid">
+            > 0 et 3 chiffres
+        </div>
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+        <button [disabled]="id.invalid || qte.invalid || title.invalid">Save</button>
+        <button (click)="addProduct()" [disabled]="f.invalid">Save</button>
+    </td>
+    </tr>
+   </table> 
+</form>
+valid:{{ title.valid }} <br>
+invalid: {{ title.invalid }} <br>
+errors: {{ title.errors }} <br>
+touched: {{ title.touched }} <br>
+untouched: {{ title.untouched }} <br>
+pristine: {{ title.pristine }} <br>
+dirty: {{ title.dirty }} <br>

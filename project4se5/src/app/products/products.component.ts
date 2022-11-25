@@ -7,7 +7,8 @@ import { Product } from '../shared/product';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-
+  title : string = "Test1";
+  price: number = 100;
   listProduct : Product[];
     constructor() //injection des services
   {  console.log("constructor"); }

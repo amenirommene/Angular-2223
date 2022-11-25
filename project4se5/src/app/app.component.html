@@ -2,4 +2,11 @@
 {{nb}} <!---interpolation-->
 <button (click)="f()">Click</button> <!---eventBinding-->
 <app-user></app-user>
-<app-products></app-products>
+<a routerLink="products">Products</a>
+<a routerLink="users">Users</a>
+<a routerLink="addProduct">add</a>
+<!---charger ici les composants -->
+
+    <!---définir où charger le composant en fonction du path-->
+<router-outlet></router-outlet>
+

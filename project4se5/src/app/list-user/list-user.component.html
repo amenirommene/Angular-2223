@@ -1,0 +1,7 @@
+<ul>
+    <li  *ngFor="let u of users" [style.fontSize]="u.id == 1 ? '20px' : ''" [style.color]="u.id == 1 ? 'red' : 'green'" >
+
+        {{u.id}} ** {{u.email}} <button (click)="f()">show</button>
+   
+    </li>
+</ul>
