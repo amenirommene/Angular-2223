@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { DetailsProductComponent } from './details-product/details-product.component';
 import { FormProductComponent } from './form-product/form-product.component';
-
+import { HttpClientModule } from '@angular/common/http'
 @NgModule({
   declarations: [ //la liste des composants
     AppComponent,
@@ -24,7 +24,8 @@ import { FormProductComponent } from './form-product/form-product.component';
   imports: [ //les modules utilisés dans ce modules : dépendances
     BrowserModule,
     AppRoutingModule,
-    FormsModule //utile pour pouvoir utiliser ngModel
+    FormsModule, //utile pour pouvoir utiliser ngModel
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
