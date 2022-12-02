@@ -18,6 +18,8 @@ export class FormProductComponent implements OnInit {
   addProduct(){
     console.log(this.p);
     this.list.push(this.p);
+    console.log(this.list);
+    this.p=new Product();
   }
 
 }

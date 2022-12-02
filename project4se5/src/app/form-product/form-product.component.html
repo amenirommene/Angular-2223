@@ -1,9 +1,18 @@
-<form ngForm #f="ngForm" >
+<form  #f="ngForm" >
    <table>
-    <!-- <tr>
+    <tr>
         <td>test</td>
-        <td><input type="text" required name="test"></td>
-    </tr> -->
+        <td><input ngModel type="text" minlength="6" required name="test" #t="ngModel">
+        <div *ngIf="t.invalid && t.touched">
+            <div *ngIf="t.errors['required']">
+                Champ obligatoire
+            </div>
+            <div *ngIf="t.errors['minlength']">
+                Minimum {{ t.errors['minlength'].requiredLength }} caractères
+            </div>
+        </div>
+        </td>
+    </tr>
     <tr>
         <td>id</td>
         <td><input type="text" required pattern="[0-9]*" [(ngModel)]="p.id" name="id" #id="ngModel">
@@ -56,6 +65,7 @@
     </tr>
    </table> 
 </form>
+{{t.touched}}<br>
 valid:{{ title.valid }} <br>
 invalid: {{ title.invalid }} <br>
 errors: {{ title.errors }} <br>
