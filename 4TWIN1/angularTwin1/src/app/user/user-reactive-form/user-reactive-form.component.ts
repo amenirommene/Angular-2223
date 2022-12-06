@@ -46,6 +46,10 @@ export class UserReactiveFormComponent implements OnInit {
   // console.log (this.myForm.controls['autres.firstName']);
    return this.myForm.controls['autres'].get('firstName');
   }
+
+  get lastName(){
+     return this.myForm.controls['autres'].get('lastName');
+    }
   get categorie(){
 
     // console.log (this.myForm.controls['autres.firstName']);

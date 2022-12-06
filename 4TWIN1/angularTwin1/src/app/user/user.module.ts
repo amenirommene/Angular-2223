@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserReactiveFormComponent } from './user-reactive-form/user-reactive-form.component';
 import { UserService } from './shared/user.service';
 import { AccountComponent } from './account/account.component';
+import { ErrorComponent } from '../shared/components/error/error.component';
 
 
 
@@ -25,7 +26,8 @@ import { AccountComponent } from './account/account.component';
     UserFormComponent,
     UserReactiveFormComponent,
     UserComponent,
-    AccountComponent
+    AccountComponent,
+    ErrorComponent
 
   ],
   imports: [

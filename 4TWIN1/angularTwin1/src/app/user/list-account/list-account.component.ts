@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Account } from 'src/app/shared/model/account';
+
 import { UserService } from '../shared/user.service';
 
 @Component({
@@ -10,6 +11,7 @@ import { UserService } from '../shared/user.service';
 export class ListAccountComponent implements OnInit {
 
   listAccounts : Account[];
+  @Output() notified = new EventEmitter<string>();
   constructor(private us:UserService) { }
 
 ngOnInit(): void {
@@ -19,5 +21,8 @@ ngOnInit(): void {
   deleteAccount(ac:Account){
     this.us.deleteAccount(ac).subscribe(()=>this.us.getAllAccounts().subscribe(res=>this.listAccounts=res));
   }
-
+  sendAccount(acc){
+    console.log("listaccount**"+acc);
+    this.notified.emit(acc);
+     }
 }

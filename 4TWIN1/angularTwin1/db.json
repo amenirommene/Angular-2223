@@ -22,7 +22,7 @@
       "firstName": "Milazertyuazertyui",
       "lastName": "azertyuio",
       "birthDate": "1999-06-30",
-      "accountCategory": "Admin",
+      "accountCategory": "Admin Account",
       "email": "mila@gmail.com",
       "password": "testzertyuio",
       "picture": "https://bootdey.com/img/Content/avatar/avatar3.png",
@@ -122,6 +122,37 @@
       "lastName": "sxdcfghjkl",
       "email": "mmm@gmail.com",
       "id": 12
+    },
+    {
+      "accountCategory": "Customer",
+      "password": "azertyuio",
+      "firstName": "testttttt",
+      "lastName": "testttttttttt",
+      "email": "mmm@gmail.com",
+      "id": 13
+    },
+    {
+      "accountCategory": "Customer",
+      "password": "edfghjkghjk",
+      "firstName": "zsdfghjk",
+      "lastName": "zsdfghjkl",
+      "email": "ameni.rommene@gmail.com",
+      "id": 14
+    },
+    {
+      "accountCategory": "Customer",
+      "password": "azertyuiop",
+      "firstName": "zertyuio",
+      "lastName": "zertyuiolpm",
+      "email": "mmm@gmail.com",
+      "id": 15
+    },
+    {
+      "firstName": "jjkhkjh",
+      "lastName": "ertyuiop",
+      "email": "ameni.rommene@gmail.com",
+      "password": "azertyuio852",
+      "id": 16
     }
   ],
   "accounts": [

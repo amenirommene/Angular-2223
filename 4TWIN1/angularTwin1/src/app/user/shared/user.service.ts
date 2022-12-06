@@ -13,6 +13,10 @@ export class UserService {
   constructor(private _http:HttpClient) { 
     console.log("je suis shared service");
   }
+
+  getUsersByAccount(Account : string){
+    return this._http.get<User[]>(this.urlUsers+"?accountCategory="+Account);
+  }
   getAllAccounts():Observable<Account[]>{
     return this._http.get<Account[]>(this.urlAccounts);
   }

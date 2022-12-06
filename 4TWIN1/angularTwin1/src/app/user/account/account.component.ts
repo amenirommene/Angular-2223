@@ -11,6 +11,7 @@ export class AccountComponent implements OnInit {
   @Input() title:string;
   @Input() description:string;
   @Output() deleted = new EventEmitter();
+  @Output() sended = new EventEmitter();
 
   constructor() { }
 
@@ -18,6 +19,9 @@ export class AccountComponent implements OnInit {
   }
   delete(){
     this.deleted.emit();
+  }
+  sendAccount(){
+     this.sended.emit();
   }
 
 }

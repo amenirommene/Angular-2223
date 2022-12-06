@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { User } from '../../shared/model/user';
 //import { SharedService } from '../../shared/services/shared.service';
 import { UserService } from '../shared/user.service';
@@ -10,17 +10,23 @@ import { UserService } from '../shared/user.service';
   //providers:[UserService]
 })
 export class UserListComponent implements OnInit {
-
+ // @Input() account:string;
   categorie1 : string = "test1";
   categorie2 : string = "test2";
   list : User[]=[];
   constructor(private myservice:UserService) { }
-
-  ngOnInit(): void {
-    //this.list=this.myservice.getAllUsers();
+  getUsersByAccount(account){
+    console.log("userlist"+ account);
+   return this.myservice.getUsersByAccount(account).subscribe(res=>this.list=res);
+  }
+  getAllUsers(){
     this.myservice.getAllUsersFromDB().subscribe(data=>
       {this.list=data, console.log(this.list)}
       );
+  }
+  ngOnInit(): void {
+    //this.list=this.myservice.getAllUsers();
+   this.getAllUsers();
    // console.log(this.list);
             /*this.list = [ 
       { 

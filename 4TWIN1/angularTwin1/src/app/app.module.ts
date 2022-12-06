@@ -8,7 +8,8 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { ErrorComponent } from './shared/components/error/error.component'
 @NgModule({ //méta data
   declarations: [ //liste des composants
     AppComponent, 

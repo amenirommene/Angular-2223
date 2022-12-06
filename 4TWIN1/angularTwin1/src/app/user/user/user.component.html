@@ -3,14 +3,16 @@
        <app-slider></app-slider>
         <!---end slide--->
         <!---start AccountList section--->
-        <app-list-account></app-list-account>
+        <app-list-account (notified)="getUsers($event)"></app-list-account>
         <!---end AccountList section--->
         <button class="btn btn-primary" (click)="showForm()">Add User</button>
+        <button class="btn btn-primary" (click)="showForm2()">Add User2</button>
         <app-user-reactive-form (aded)="addUser($event)" *ngIf="show"></app-user-reactive-form>
         <!---Formulaire d'ajout-->
-        <app-user-form></app-user-form>
+        <app-user-form *ngIf="show2"></app-user-form>
         <!---fin form-->
         <!---start userList section--->
-        <app-user-list></app-user-list>
+        <app-user-list #list></app-user-list>
+        {{list.categorie1}}
         <!---end userList section--->
       

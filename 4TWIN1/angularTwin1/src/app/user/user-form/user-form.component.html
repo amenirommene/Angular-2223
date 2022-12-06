@@ -5,13 +5,16 @@
         <tr>
             <td>FirstName</td>
             <td><input type="text" required  minlength="5" pattern="[a-zA-Z]*" name="firstname" [(ngModel)]="user.firstName" #first="ngModel">
-            <div *ngIf="first.invalid">
-                <div *ngIf="first.hasError('required')"> <!--- !first.valid ---->
+                <div *ngIf="first.invalid">
+                <app-error [errors]="first.errors"></app-error>
+                
+                <!---<div *ngIf="first.hasError('required')"> 
                     FirstName obligatoire
-                </div>
-                <div *ngIf="first.errors['minlength']"> <!--- !first.valid ---->
-                    FirstName contient au minimum {{first.errors?.['minlength'].requiredLength}} caratctères alors que vous avez écrit
-                    {{first.errors?.['minlength'].actualLength}}
+                </div>----->
+               <div *ngIf="first.errors['minlength']"> 
+                   <!----FirstName contient au minimum {{first.errors?.['minlength'].requiredLength}} caratctères alors que vous avez écrit
+                    {{first.errors?.['minlength'].actualLength}}---->
+                   
                 </div>
                 <div *ngIf="first.errors?.['pattern']"> <!--- !first.valid ---->
                     FirstName ne doit contenir que des lettres 

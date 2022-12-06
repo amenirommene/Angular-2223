@@ -1,44 +1,59 @@
 <form [formGroup]="myForm" (ngSubmit)="save()">
-    <div formGroupName="autres">
-first Name : <input type="text" formControlName="firstName"> 
+<div formGroupName="autres">
+        <div class="form-group">
+            <label for="firstname">First Name</label>
+            <input type="text" formControlName="firstName" class="form-control" id="Firstname" placeholder="Enter FirstName">
+        </div>
+        
 <div *ngIf="FirstName.invalid">
-<div *ngIf="FirstName.errors['required']">
+<div *ngIf="FirstName.errors?.['required']" class="alert alert-danger" role="alert">
     FirstName obligatoire 
 </div>
-<div *ngIf="FirstName.errors['minlength']">
+<div *ngIf="FirstName.errors?.['minlength']" class="alert alert-danger" role="alert">
     FirstName minim 5 
 </div>
-<div *ngIf="FirstName.errors['pattern']">
+<div *ngIf="FirstName.errors?.['pattern']" class="alert alert-danger" role="alert">
     Il ne faut que des lettres 
 </div>
 </div>
-<br>
-last Name : <input type="text" formControlName="lastName"> <br>
-<div *ngIf="myForm.get('autres').get('lastName').invalid">
-    <div *ngIf="myForm.get('autres').get('lastName').errors['required']">
+<div class="form-group">
+    <label for="lastName">Last Name</label>
+    <input type="text" formControlName="lastName" class="form-control" id="lastName" placeholder="Enter LastName">
+</div>
+<div *ngIf="lastName.errors">
+    <div class="alert alert-danger" role="alert" *ngIf="lastName.errors?.['required']">
         Last Name obligatoire 
     </div>
-    <div *ngIf="myForm.controls['autres'].get('lastName').errors['minlength']">
+    <div class="alert alert-danger" role="alert" *ngIf="lastName.errors?.['minlength']">
         LastName minim 5 
     </div>
-    <div *ngIf="myForm.controls['autres'].get('lastName').errors['pattern']">
+    <div class="alert alert-danger" role="alert" *ngIf="lastName.errors?.['pattern']">
         Il ne faut que des lettres 
     </div>
-    </div>
-email : <input type="text" formControlName="email"> <br>
 </div>
-categorie : <input type="text" formControlName="categorie">
-<div *ngIf="categorie.invalid">
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" formControlName="email" class="form-control" id="email" placeholder="Enter your email">
+    </div>
+</div>
+    <div class="form-group">
+        <label for="categorie">Catégorie</label>
+        <input type="text" formControlName="categorie" class="form-control" id="categorie" placeholder="Enter Categorie">
+    </div>
+<div class="alert alert-danger" role="alert" *ngIf="categorie.invalid">
     categorie obligatoire
-</div> <br>
-password : <input type="text" formControlName="password">
-<div *ngIf="myForm.get('password').invalid">
-<div *ngIf="myForm.get('password').errors['required']">
+</div>
+<div class="form-group">
+    <label for="password">Password</label>
+    <input type="text" formControlName="password" class="form-control" id="password" placeholder="Enter password">
+</div>
+<div  *ngIf="myForm.get('password').invalid">
+<div class="alert alert-danger" role="alert" *ngIf="myForm.get('password').errors['required']">
     password obligatoire
 </div>  
-<div *ngIf="myForm.get('password').errors['pattern']">
+<div class="alert alert-danger" role="alert" *ngIf="myForm.get('password').errors['pattern']">
     Il faut respecter le format requis
 </div>
 </div>
-<input type="submit" [disabled]="myForm.invalid">
+<input class="btn btn-sucess" type="submit" [disabled]="myForm.invalid">
 </form>
