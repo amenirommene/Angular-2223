@@ -1,6 +1,6 @@
 <form  #f="ngForm" >
    <table>
-    <tr>
+    <!-- <tr>
         <td>test</td>
         <td><input ngModel type="text" minlength="6" required name="test" #t="ngModel">
         <div *ngIf="t.invalid && t.touched">
@@ -12,8 +12,8 @@
             </div>
         </div>
         </td>
-    </tr>
-    <tr>
+    </tr> -->
+    <!-- <tr>
         <td>id</td>
         <td><input type="text" required pattern="[0-9]*" [(ngModel)]="p.id" name="id" #id="ngModel">
             <div *ngIf="id.invalid">
@@ -25,14 +25,13 @@
                     
                     Que des chiffres
                  </div>
-                <!---variable référence de template -->
-                
+                               
             </div>
         </td>
     </tr>
-    <tr>
+    --> <tr>
         <td>Title</td>
-        <td><input name="titlep" [(ngModel)]="p.title" type="text" value="val" required minlength="5" #title="ngModel">
+        <td><input name="titlep"   [(ngModel)]="p.title" type="text" value="val" required minlength="5" #title="ngModel">
         <div *ngIf="title.invalid && title.touched">
             <div *ngIf="title.errors['required']">
                 
@@ -59,13 +58,13 @@
     <tr>
         <td></td>
         <td>
-        <button [disabled]="id.invalid || qte.invalid || title.invalid">Save</button>
+        <button (click)="update()" [disabled]="qte.invalid || title.invalid">update</button>
         <button (click)="addProduct()" [disabled]="f.invalid">Save</button>
     </td>
     </tr>
    </table> 
 </form>
-{{t.touched}}<br>
+
 valid:{{ title.valid }} <br>
 invalid: {{ title.invalid }} <br>
 errors: {{ title.errors }} <br>

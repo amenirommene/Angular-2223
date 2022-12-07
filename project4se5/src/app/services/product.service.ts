@@ -13,6 +13,19 @@ export class ProductService {
   getAllProductsFromDb():Observable<Product[]>{
    return this.myHttp.get<Product[]>(this.productUrls);
   }
+  addProduct(product:Product){
+    return this.myHttp.post(this.productUrls,product)
+  }
+  deleteProduct(product:Product){
+    return this.myHttp.delete(this.productUrls+"/"+product.id)
+  }
+  getProductById(id:number):Observable<Product>{
+    return this.myHttp.get<Product>(this.productUrls+"/"+id);
+  }
+  updateProduct(product:Product):Observable<Product>{
+    return this.myHttp.put<Product>(this.productUrls+"/"+product.id,
+    product)
+  }
   getAllProducts(){
     return [
       {id: 1, title: "T-shirt 1", price: 18, quantity: 0, like: 0},

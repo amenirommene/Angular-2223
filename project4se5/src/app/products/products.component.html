@@ -11,6 +11,7 @@ Recherche : <input type="number" [(ngModel)]="price">
         <td>Like</td>
         <td></td>
         <td></td>
+        <td></td>
     </tr>
     <div *ngFor="let p of listProduct">
     <tr *ngIf="p.price <= price">
@@ -18,6 +19,8 @@ Recherche : <input type="number" [(ngModel)]="price">
         <td>{{p.quantity}}</td>
         <td >{{p.price}}</td>
         <td>{{p.like}}</td>
+        <td><a [routerLink]="['/addProduct',p.id]">update</a></td>
+        <td><button (click)="delete(p)">Delete</button></td>
         <td><button *ngIf="p.quantity > 0" (click)="buy(p)">Buy</button>
             <button [hidden]="p.quantity == 0" (click)="buy(p)">Buy</button>
             <button [disabled]="p.quantity == 0" (click)="buy(p)">Buy</button>

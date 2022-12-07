@@ -7,7 +7,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { ProductsComponent } from './products/products.component';
 
 const routes: Routes = [
-  {path:"addProduct", component:FormProductComponent},
+  {path:"addProduct/:id", component:FormProductComponent},
   {path:"", redirectTo:"products", pathMatch:"full"},
   {path:"products", component:ProductsComponent},
   {path:"users", component:ListUserComponent},

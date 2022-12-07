@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ProductService } from '../services/product.service';
 import { Product } from '../shared/product';
 
@@ -11,11 +12,15 @@ import { Product } from '../shared/product';
 })
 export class ProductsComponent implements OnInit {
   title : string = "Test1";
-  price: number = 100;
+  price: number = 10000;
   listProduct :  Product[];
     constructor(private ps:ProductService) //injection des services
   {  console.log("constructor"); }
-
+   delete(p:Product){
+    this.ps.deleteProduct(p).subscribe(()=>
+    this.ps.getAllProductsFromDb().subscribe(res=>
+      {this.listProduct=res}));
+   }
   buy(p:Product){
     if (p.quantity > 0){
    p.quantity = p.quantity - 1;
@@ -32,8 +37,8 @@ export class ProductsComponent implements OnInit {
       {id: 3, title: "T-shirt 3", price: 16, quantity: 8, like: 0}, ];
   */
     //  this.listProduct=this.ps.getAllProducts();
-    this.ps.getAllProductsFromDb().
-    subscribe(res=>this.listProduct=res);
+    this.ps.getAllProductsFromDb().subscribe(res=>
+      {this.listProduct=res;console.log(this.listProduct)});
   }
 
 }
