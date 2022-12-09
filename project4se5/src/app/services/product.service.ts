@@ -19,10 +19,12 @@ export class ProductService {
   deleteProduct(product:Product){
     return this.myHttp.delete(this.productUrls+"/"+product.id)
   }
+  
   getProductById(id:number):Observable<Product>{
     return this.myHttp.get<Product>(this.productUrls+"/"+id);
   }
   updateProduct(product:Product):Observable<Product>{
+    console.log(product);
     return this.myHttp.put<Product>(this.productUrls+"/"+product.id,
     product)
   }

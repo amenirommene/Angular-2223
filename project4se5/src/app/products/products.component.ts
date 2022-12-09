@@ -12,6 +12,7 @@ import { Product } from '../shared/product';
 })
 export class ProductsComponent implements OnInit {
   title : string = "Test1";
+  nb2:number=5;
   price: number = 10000;
   listProduct :  Product[];
     constructor(private ps:ProductService) //injection des services
@@ -20,6 +21,11 @@ export class ProductsComponent implements OnInit {
     this.ps.deleteProduct(p).subscribe(()=>
     this.ps.getAllProductsFromDb().subscribe(res=>
       {this.listProduct=res}));
+   }
+   incrementLike(obj:any){
+    //obj.product.like=obj.product.like + Number(obj.nb);
+    this.ps.updateProduct(obj.product);
+     console.log(obj.msg);
    }
   buy(p:Product){
     if (p.quantity > 0){

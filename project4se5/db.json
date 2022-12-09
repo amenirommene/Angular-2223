@@ -18,13 +18,6 @@
   },
   "products": [
     {
-      "id": 3,
-      "title": "T-shirt 3",
-      "price": 16,
-      "quantity": 8,
-      "like": 0
-    },
-    {
       "id": 4,
       "title": "T-shirt 48",
       "price": 16,

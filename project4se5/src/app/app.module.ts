@@ -10,7 +10,8 @@ import { FormsModule } from '@angular/forms';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { DetailsProductComponent } from './details-product/details-product.component';
 import { FormProductComponent } from './form-product/form-product.component';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { ProductComponent } from './product/product.component'
 @NgModule({
   declarations: [ //la liste des composants
     AppComponent,
@@ -19,7 +20,8 @@ import { HttpClientModule } from '@angular/common/http'
     ListUserComponent,
     NotFoundComponent,
     DetailsProductComponent,
-    FormProductComponent
+    FormProductComponent,
+    ProductComponent
   ],
   imports: [ //les modules utilisés dans ce modules : dépendances
     BrowserModule,

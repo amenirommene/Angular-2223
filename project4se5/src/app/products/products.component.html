@@ -1,4 +1,8 @@
-<p>products works!</p>
+<div *ngFor="let p of listProduct">
+<app-product (liked)="incrementLike($event)" (clicked)="delete(p)" [product]="p" [nb]="nb2"></app-product>
+</div>
+
+
 <input type="text" [(ngModel)]="title"> {{title}}
 <div>
 Recherche : <input type="number" [(ngModel)]="price">
